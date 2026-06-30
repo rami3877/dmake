@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     objectAdd(&main_app2);
 
 
-	system("./build/main.elf");
+
     return 0;
 }
 

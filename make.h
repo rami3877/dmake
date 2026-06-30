@@ -378,13 +378,13 @@ void objectAdd(BObject *object) {
         f_idx++;
     }
 
-    u64 shellFlagCount = 0, shellIncludeCount = 0, shellLibPathCount = 0;
+    u64 shellFlagCount  = 0, shellIncludeCount = 0, shellLibPathCount = 0;
     i8 **shell_flags    = split_space(getenv("BUILDER_EXTRA_FLAGS"), &shellFlagCount);
     i8 **shell_includes = split_space(getenv("BUILDER_EXTRA_INCLUDES"), &shellIncludeCount);
     i8 **shell_libpaths = split_space(getenv("BUILDER_EXTRA_LIBRSPATH"), &shellLibPathCount);
 
-    u64 apiFlagCount = 0, apiIncludeCount = 0, apiLibPathCount = 0;
-    i8 **api_flags = split_space(global_api_flags, &apiFlagCount);
+    u64 apiFlagCount  = 0, apiIncludeCount = 0, apiLibPathCount = 0;
+    i8 **api_flags    = split_space(global_api_flags, &apiFlagCount);
     i8 **api_includes = split_space(global_api_includes, &apiIncludeCount);
     i8 **api_libpaths = split_space(global_api_libpaths, &apiLibPathCount);
 
