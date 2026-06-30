@@ -2,7 +2,7 @@
 
 A lightweight single-header build system written entirely in C.
 
-`builder.h` provides a simple native build automation engine capable of compiling executables, static libraries, and shared libraries with automatic dependency handling and incremental builds.
+`dmake.h` provides a simple native build automation engine capable of compiling executables, static libraries, and shared libraries with automatic dependency handling and incremental builds.
 
 Unlike traditional Makefiles, Builder allows you to describe your build directly in C structures.
 
@@ -311,13 +311,13 @@ project/
 │       └── src/window.c.o
 ├── src/
 ├── include/
-├── builder.h
+├── dmake.h
 └── build.c
 ```
 
 ---
 
-## Why Builder?
+## Why dmake?
 
 Builder was created for developers who want:
 
