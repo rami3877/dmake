@@ -31,7 +31,7 @@ Unlike traditional Makefiles, Builder allows you to describe your build directly
 
 ```c
 #define BUILDER_IMPLEMENTATION
-#include "builder.h"
+#include "dmake.h"
 
 int main(int argc, char **argv)
 {
