@@ -1,4 +1,4 @@
-# Builder.h
+# dmake.h
 
 A lightweight single-header build system written entirely in C.
 
