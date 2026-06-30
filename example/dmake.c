@@ -1,13 +1,10 @@
 #define BUILDER_IMPLEMENTATION
-
-//#include "/home/rami/usr/include/make.h"
-#include "make.h"
+#include "../dmake.h"
 
 int main(int argc, char **argv) {
     setGlobalCompiler("gcc");
     setBuildDir("build");
-
-    check_and_rebuild_self(argc, argv, "make.c");
+    check_and_rebuild_self(argc, argv, "dmake.c");
     BObject math_lib = {
         .name = "my_lib",
         .type = B_SHARED,
@@ -18,7 +15,7 @@ int main(int argc, char **argv) {
 
     };
 
-    BObject main_app2 = {
+    BObject main_app = {
         .name = "main2",
         .type = B_EXEC,
         .flags = (const i8*[]){"-std=c11", "-ggdb", null},
@@ -29,19 +26,7 @@ int main(int argc, char **argv) {
 		.librs  =(const i8 *[]){"array" , null}, 
 		.object =(BObject *[] ){&math_lib , null},
     };
-    BObject main_app = {
-        .name = "main",
-        .type = B_EXEC,
-        .flags = (const i8*[]){"-std=c11", "-ggdb", null},
-        .files = (const i8*[]){
-            "main.c",     
-            null
-        },
-		.librs  =(const i8 *[]){"array" , null}, 
-		.object =(BObject *[] ){&math_lib ,null},
-    };
     objectAdd(&main_app);
-    objectAdd(&main_app2);
 
 
 
